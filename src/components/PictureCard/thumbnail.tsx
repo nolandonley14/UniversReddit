@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Feather from 'react-native-vector-icons/Feather';
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
-import { ThemeModeContext } from '../../HomeScreen';
+import { ThemeModeContext } from '../../screens/HomeScreen';
 
 export const IMAGE_HEIGHT = 180;
 

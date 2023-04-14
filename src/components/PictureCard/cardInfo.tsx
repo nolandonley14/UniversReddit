@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
-import { ThemeModeContext } from '../../HomeScreen';
+import { ThemeModeContext } from '../../screens/HomeScreen';
 import moment from "moment";
 
 export const IMAGE_HEIGHT = 180;
@@ -27,12 +27,12 @@ const CardInfo: React.FC<CardInfoProps> = ({
             relativeTime : {
                 future: "in %s",
                 past:   "%s ago",
-                s: function (number, withoutSuffix, key, isFuture){
-                    return '00:' + (number<10 ? '0':'') + number + ' minutes';
+                s: function (number) {
+                    return  number + ' minutes';
                 },
-                m:  "01:00 minutes",
-                mm: function (number, withoutSuffix, key, isFuture){
-                    return (number<10 ? '0':'') + number + ':00' + ' minutes';
+                m:  "a minute",
+                mm: function (number) {
+                    return number + ' minutes';
                 },
                 h:  "an hour",
                 hh: "%d hours",
@@ -46,19 +46,6 @@ const CardInfo: React.FC<CardInfoProps> = ({
         });
         var commentTime = moment(new Date(time)).fromNow();
         return commentTime.toString()
-    }
-
-    const getTimeStamp = (time : number) => {
-        var commentTime = moment(new Date(time));
-        var today = moment();
-        var oneWeekAgo = today.clone().subtract(7, 'days').startOf('day');
-        if (commentTime.isSame(new Date(), "day")) {
-          return (commentTime.format("hh:mm a, ") + "Today")
-        } else if (commentTime.isAfter(oneWeekAgo)) {
-          return commentTime.format("hh:mm a, dddd")
-        } else {
-          return commentTime.format("hh:mm a, MM/DD/YY")
-        }
     }
 
     return (

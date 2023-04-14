@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction, useContext } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { Filter, Theme, ThemeModeContext } from '../HomeScreen';
+import { Filter, Theme, ThemeModeContext } from '../screens/HomeScreen';
 import LinearGradient from 'react-native-linear-gradient';
 
 type TFilterProps = {

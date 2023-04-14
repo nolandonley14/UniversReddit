@@ -10,10 +10,10 @@ import {
     View,
     StatusBar
 } from 'react-native';
-import CustomHeader from './components/CustomHeader';
-import RedditPicCard from './components/RedditPicCard';
-import { UseGetFilteredPictures } from './hooks/getPicsQuery';
-import { MainStackParamList } from './navigation/MainStack';
+import CustomHeader from '../components/CustomHeader';
+import RedditPicCard from '../components/RedditPicCard';
+import { UseGetFilteredPictures } from '../hooks/getPicsQuery';
+import { MainStackParamList } from '../navigation/MainStack';
 
 export const ThemeModeContext = createContext({theme: 'dark', mode: 'info'});
 
@@ -47,12 +47,10 @@ const HomeScreen = () => {
     }
 
     return (
-        <SafeAreaView style={[styles.container, {backgroundColor: theme == "dark" ? "#000000" : "#ffffff"}]}>
+        <SafeAreaView style={[styles.container, {backgroundColor: theme == "dark" ? "black" : "white"}]}>
             <StatusBar barStyle={theme == "dark" ? "light-content" : "dark-content"}/>
             <ThemeModeContext.Provider value={{theme, mode}}>
-                <View style={[styles.headerContainer, {backgroundColor: theme == "dark" ? "black" : "white"}]}>
-                    <CustomHeader setTheme={setTheme} setMode={setMode} currentFilter={currentFilter} setCurrentFilter={setCurrentFilter} />
-                </View>
+                <CustomHeader setTheme={setTheme} setMode={setMode} currentFilter={currentFilter} setCurrentFilter={setCurrentFilter} />
                 {isLoading ? (
                     <View style={{flex: 1, justifyContent: "center"}}>
                         <Text style={{textAlign: "center", fontSize: 20, fontWeight: "bold"}}>Loading...</Text>
@@ -69,7 +67,9 @@ const HomeScreen = () => {
                         />
                     </View>
                 ) : (
-                    <Text>Whoops No Data Available</Text>
+                    <View style={{flex: 1, justifyContent: "center"}}>
+                        <Text style={{textAlign: "center", fontSize: 20, fontWeight: "bold"}}>Whoops No Data Available</Text>
+                    </View>
                 )}
             </ThemeModeContext.Provider>
         </SafeAreaView>
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     },
     headerContainer: {
         backgroundColor: "white",
-        shadowColor: "#000000",
+        shadowColor: "black",
         shadowOpacity: 0.1,
         shadowOffset: {
             width: 0,

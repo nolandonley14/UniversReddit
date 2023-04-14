@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction, useContext } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { Filter, Mode, Theme, ThemeModeContext } from '../HomeScreen';
+import { Filter, Mode, Theme, ThemeModeContext } from '../screens/HomeScreen';
 import Feather from 'react-native-vector-icons/Feather';
 import Filters from './Filters';
 

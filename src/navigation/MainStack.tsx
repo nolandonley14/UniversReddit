@@ -1,7 +1,7 @@
-import React from "react";
+import React, { createContext } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "../HomeScreen";
-import CustomWebView from "../components/PicWebView";
+import HomeScreen from "../screens/HomeScreen";
+import CustomWebView from "../screens/PicWebView";
 
 export type MainStackParamList = {
   Home: undefined;
@@ -13,26 +13,28 @@ export type MainStackParamList = {
 
 const Stack = createNativeStackNavigator<MainStackParamList>();
 
+
 export const GetMainAppComponents = () => (
-  <Stack.Navigator
-    screenOptions={{
-      headerShown: false
-    }}>
-    <Stack.Screen
-      name={"Home"}
-      component={HomeScreen}
-      options={{
-        headerShown: false,
-        headerShadowVisible: false
-      }}
-    />
-    <Stack.Screen
-      name={"Pic"}
-      component={CustomWebView}
-      options={{
-        headerShown: false,
-        headerShadowVisible: false
-      }}
-    />
-  </Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}>
+      <Stack.Screen
+        name={"Home"}
+        component={HomeScreen}
+        options={{
+          headerShown: false,
+          headerShadowVisible: false
+        }}
+      />
+      <Stack.Screen
+        name={"Pic"}
+        component={CustomWebView}
+        options={{
+          headerShown: false,
+          headerShadowVisible: false
+        }}
+      />
+    </Stack.Navigator>
 );
+  
