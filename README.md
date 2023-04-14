@@ -19,5 +19,32 @@ Nolan Donley - Apr 2023
 7. Ability to sort the post list (“top”, “new”, “hot” or “controversial”)
 8. Data caching
 
-### Project Design
+### Product
+This is a bare bones, react native application with a blog-style layout that displays 25 relavent posts from the r/pics subreddit. Basic features include:  
+    * data caching
+    * dark / light theme
+    * info / clean mode 
+    * WebView of selected subreddit
+    * 4 filters for r/pics (hot, new, top, controversial)
+
+### Process (5.5 Hours)
+* Brainstorm and Design ( 30 min )
+* Development ( 4 hours )
+* Deployment and Documentation ( 1 hour )
+
+### Design
+Design Points of Emphasis
+* Picture based card
+* Relavent info easy to read
+* Easy to digest many posts without lots of scroll time
+* Basic Personaliztion
+
+To get the biggest image size while still keeping the card size down, I opted for a 2 column list-style layout.
+I decided that a single column with large instagram style images induced too much scroll, and smaller horizontal cards would make the images too small.  
+I also opted for a very basic color black and white color scheme as the images are intended to be the main visual target. I included a slightly more tasteful font for the header, but kept the body font dialed down again not to divert too much away from the image.  
+  
 ![Design Image](./images/design.jpg?raw=true)
+
+### Development
+
+### Deployment
